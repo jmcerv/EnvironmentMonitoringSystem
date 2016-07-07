@@ -1,0 +1,24 @@
+<h1>List of Rules</h1>
+ 
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Threshold</th>
+    <th>User</th>
+  </tr>
+ 
+  <% @rules.each do |rule| %>
+    <tr>
+      <td><%= rule.param %></td>
+      <td><%= rule.treshold %></td>
+      <td><%= rule.users %></td>
+      <td><%= link_to 'Show', rule_path(rule) %></td>
+      <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
+      <td><%= link_to 'Destroy', rule_path(rule),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', controller: 'menu' %>
